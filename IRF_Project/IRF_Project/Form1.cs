@@ -15,6 +15,17 @@ namespace IRF_Project
         public Form1()
         {
             InitializeComponent();
+            CreateAnswerSheet();
+        }
+
+        private void CreateAnswerSheet()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                AnswerSheet answer = new AnswerSheet();
+                answer.Left = i * answer.Width;
+                panel1.Controls.Add(answer);
+            }
         }
     }
 }

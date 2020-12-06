@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IRF_Project
 {
-    class AnswerSheet : Button
+    public class AnswerSheet : Button
     {
         private int _answer;
         public int Answer {
