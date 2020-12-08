@@ -29,17 +29,15 @@ namespace IRF_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.nickname = new System.Windows.Forms.Label();
             this.points = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblQuestion = new System.Windows.Forms.Label();
-            this.lblAnswer1 = new System.Windows.Forms.Label();
-            this.lblAnswer2 = new System.Windows.Forms.Label();
-            this.lblAnswer3 = new System.Windows.Forms.Label();
-            this.lblAnswer4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,52 +84,6 @@ namespace IRF_Project
             this.label2.TabIndex = 4;
             this.label2.Text = "pont";
             // 
-            // lblQuestion
-            // 
-            this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblQuestion.Location = new System.Drawing.Point(493, 158);
-            this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(70, 25);
-            this.lblQuestion.TabIndex = 5;
-            this.lblQuestion.Text = "label3";
-            // 
-            // lblAnswer1
-            // 
-            this.lblAnswer1.AutoSize = true;
-            this.lblAnswer1.Location = new System.Drawing.Point(210, 239);
-            this.lblAnswer1.Name = "lblAnswer1";
-            this.lblAnswer1.Size = new System.Drawing.Size(46, 17);
-            this.lblAnswer1.TabIndex = 6;
-            this.lblAnswer1.Text = "label3";
-            // 
-            // lblAnswer2
-            // 
-            this.lblAnswer2.AutoSize = true;
-            this.lblAnswer2.Location = new System.Drawing.Point(676, 239);
-            this.lblAnswer2.Name = "lblAnswer2";
-            this.lblAnswer2.Size = new System.Drawing.Size(46, 17);
-            this.lblAnswer2.TabIndex = 7;
-            this.lblAnswer2.Text = "label3";
-            // 
-            // lblAnswer3
-            // 
-            this.lblAnswer3.AutoSize = true;
-            this.lblAnswer3.Location = new System.Drawing.Point(210, 376);
-            this.lblAnswer3.Name = "lblAnswer3";
-            this.lblAnswer3.Size = new System.Drawing.Size(46, 17);
-            this.lblAnswer3.TabIndex = 8;
-            this.lblAnswer3.Text = "label3";
-            // 
-            // lblAnswer4
-            // 
-            this.lblAnswer4.AutoSize = true;
-            this.lblAnswer4.Location = new System.Drawing.Point(676, 376);
-            this.lblAnswer4.Name = "lblAnswer4";
-            this.lblAnswer4.Size = new System.Drawing.Size(46, 17);
-            this.lblAnswer4.TabIndex = 9;
-            this.lblAnswer4.Text = "label3";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(788, 120);
@@ -142,17 +94,20 @@ namespace IRF_Project
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 142);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(693, 285);
+            this.panel2.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 524);
+            this.ClientSize = new System.Drawing.Size(1020, 439);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblAnswer4);
-            this.Controls.Add(this.lblAnswer3);
-            this.Controls.Add(this.lblAnswer2);
-            this.Controls.Add(this.lblAnswer1);
-            this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.points);
             this.Controls.Add(this.nickname);
@@ -172,12 +127,9 @@ namespace IRF_Project
         private System.Windows.Forms.Label nickname;
         private System.Windows.Forms.Label points;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblQuestion;
-        private System.Windows.Forms.Label lblAnswer1;
-        private System.Windows.Forms.Label lblAnswer2;
-        private System.Windows.Forms.Label lblAnswer3;
-        private System.Windows.Forms.Label lblAnswer4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

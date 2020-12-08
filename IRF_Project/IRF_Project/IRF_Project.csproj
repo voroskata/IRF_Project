@@ -87,6 +87,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="KerdesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KerdesUserControl.Designer.cs">
+      <DependentUpon>KerdesUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs">
       <DependentUpon>QuizModel.tt</DependentUpon>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KerdesUserControl.resx">
+      <DependentUpon>KerdesUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -16,12 +16,51 @@ namespace IRF_Project
         PlayerEntities1 context = new PlayerEntities1();
 
 
+        private Random rnd = new Random();
+
         public Form1()
         {
             InitializeComponent();
             CreateAnswerSheet();
 
             context.Questions.Load();
+
+            int kerdes_id = rnd.Next(40)+1;
+
+            //var kerdes = from k in context.Questions
+            //               where k.Id == kerdes_id
+            //               select k.Question1;
+
+            //lblQuestion.Text = kerdes.ToString();
+
+            string kerdes = (from k in context.Questions
+                             where k.Id == kerdes_id
+                             select k.Question1).ToString();
+
+            string v1 = (from k in context.Questions
+                         where k.Id == kerdes_id
+                         select k.Answer_1).ToString();
+
+            string v2 = (from k in context.Questions
+                         where k.Id == kerdes_id
+                         select k.Answer_2).ToString();
+
+            string v3 = (from k in context.Questions
+                         where k.Id == kerdes_id
+                         select k.Answer_3).ToString();
+
+            string v4 = (from k in context.Questions
+                         where k.Id == kerdes_id
+                         select k.Answer_4).ToString();
+
+            //int jovalasz = from k in context.Questions
+            //                where k.Id == kerdes_id
+            //                select k.Correct
+
+            int jovalasz = 1;
+
+            KerdesUserControl kuc = new KerdesUserControl(kerdes, v1, v2, v3, v4, jovalasz);
+            panel2.Controls.Add(kuc);
         }
 
         private void CreateAnswerSheet()
