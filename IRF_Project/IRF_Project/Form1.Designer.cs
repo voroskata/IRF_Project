@@ -39,6 +39,7 @@ namespace IRF_Project
             this.lblAnswer2 = new System.Windows.Forms.Label();
             this.lblAnswer3 = new System.Windows.Forms.Label();
             this.lblAnswer4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,11 +132,22 @@ namespace IRF_Project
             this.lblAnswer4.TabIndex = 9;
             this.lblAnswer4.Text = "label3";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(788, 120);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 32);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Eredmények";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 524);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAnswer4);
             this.Controls.Add(this.lblAnswer3);
             this.Controls.Add(this.lblAnswer2);
@@ -165,6 +177,7 @@ namespace IRF_Project
         private System.Windows.Forms.Label lblAnswer2;
         private System.Windows.Forms.Label lblAnswer3;
         private System.Windows.Forms.Label lblAnswer4;
+        private System.Windows.Forms.Button button1;
     }
 }
 
