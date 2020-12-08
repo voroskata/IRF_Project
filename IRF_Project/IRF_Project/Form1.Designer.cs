@@ -38,6 +38,7 @@ namespace IRF_Project
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +87,7 @@ namespace IRF_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(788, 120);
+            this.button1.Location = new System.Drawing.Point(788, 114);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 32);
             this.button1.TabIndex = 10;
@@ -96,16 +97,27 @@ namespace IRF_Project
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(12, 142);
+            this.panel2.Location = new System.Drawing.Point(12, 157);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(693, 285);
+            this.panel2.Size = new System.Drawing.Size(693, 270);
             this.panel2.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(788, 277);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(166, 32);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Következő kérdés";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 439);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -130,6 +142,7 @@ namespace IRF_Project
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
     }
 }
 

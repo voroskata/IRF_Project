@@ -44,6 +44,7 @@ namespace IRF_Project
             this.lblAnswer4.Size = new System.Drawing.Size(46, 17);
             this.lblAnswer4.TabIndex = 14;
             this.lblAnswer4.Text = "label3";
+            this.lblAnswer4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAnswer3
             // 
@@ -53,6 +54,7 @@ namespace IRF_Project
             this.lblAnswer3.Size = new System.Drawing.Size(46, 17);
             this.lblAnswer3.TabIndex = 13;
             this.lblAnswer3.Text = "label3";
+            this.lblAnswer3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAnswer2
             // 
@@ -62,6 +64,7 @@ namespace IRF_Project
             this.lblAnswer2.Size = new System.Drawing.Size(46, 17);
             this.lblAnswer2.TabIndex = 12;
             this.lblAnswer2.Text = "label3";
+            this.lblAnswer2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAnswer1
             // 
@@ -71,16 +74,19 @@ namespace IRF_Project
             this.lblAnswer1.Size = new System.Drawing.Size(46, 17);
             this.lblAnswer1.TabIndex = 11;
             this.lblAnswer1.Text = "label3";
+            this.lblAnswer1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblQuestion
             // 
+            this.lblQuestion.AutoEllipsis = true;
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblQuestion.Location = new System.Drawing.Point(270, 20);
+            this.lblQuestion.Location = new System.Drawing.Point(25, 29);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(70, 25);
             this.lblQuestion.TabIndex = 10;
             this.lblQuestion.Text = "label3";
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // KerdesUserControl
             // 

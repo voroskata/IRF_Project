@@ -20,13 +20,17 @@ namespace IRF_Project
         public Form1()
         {
             InitializeComponent();
+
             CreateAnswerSheet();
 
             context.Quizs.Load();
 
-            //int kerdes_id = rnd.Next(40)+1;
+            GetQuestions();
+        }
 
-            int kerdes_id = 2;
+        private void GetQuestions()
+        {
+            int kerdes_id = rnd.Next(40) + 1;
 
             string kerdes = ((from k in context.Quizs
                               where k.Id == kerdes_id
@@ -73,6 +77,13 @@ namespace IRF_Project
         {
             Form2 f2 = new Form2();
             f2.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+
+            GetQuestions();
         }
     }
 }
