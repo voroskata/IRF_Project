@@ -25,6 +25,16 @@ namespace IRF_Project
             lblAnswer4.Text = v4;
 
             this.jv = jv;
+
+            GetSolution(jv);
+        }
+
+        private static void GetSolution(int jv)
+        {
+            //if (jv == 1) button1.BackColor = Color.Green;
+            //if (jv == 2) button2.BackColor = Color.Green;
+            //if (jv == 3) button3.BackColor = Color.Green;
+            //if (jv == 4) button4.BackColor = Color.Green;
         }
     }
 }

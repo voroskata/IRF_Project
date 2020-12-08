@@ -24,8 +24,27 @@ namespace IRF_Project
             CreateAnswerSheet();
 
             context.Quizs.Load();
+            context.Participants.Load();
 
             GetQuestions();
+            GetBestParticipant();
+
+        }
+
+        private void GetBestParticipant()
+        {
+            var maxValue = context.Participants.Max(x => x.Points);
+
+            string legjobbNev = ((from p in context.Participants
+                               where p.Points == maxValue
+                               select p.Nickname).SingleOrDefault()).ToString();
+
+            string legjobbPont = ((from p in context.Participants
+                               where p.Points == maxValue
+                               select p.Points).SingleOrDefault()).ToString();
+
+            nickname.Text = legjobbNev.ToString();
+            points.Text = legjobbPont.ToString();
         }
 
         private void GetQuestions()
@@ -50,13 +69,11 @@ namespace IRF_Project
 
             string v4 = ((from k in context.Quizs
                           where k.Id == kerdes_id
-                          select k.Answer_4)).SingleOrDefault().ToString();
+                          select k.Answer_4).SingleOrDefault()).ToString();
 
-            //int jovalasz = from k in context.Questions
-            //                where k.Id == kerdes_id
-            //                select k.Correct
-
-            int jovalasz = 1;
+            int jovalasz = ((from k in context.Quizs
+                            where k.Id == kerdes_id
+                            select k.Correct).SingleOrDefault());
 
             KerdesUserControl kuc = new KerdesUserControl(kerdes, v1, v2, v3, v4, jovalasz);
             panel2.Controls.Add(kuc);
