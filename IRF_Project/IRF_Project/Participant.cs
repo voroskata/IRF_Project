@@ -12,13 +12,11 @@ namespace IRF_Project
     using System;
     using System.Collections.Generic;
     
-    public partial class Question
+    public partial class Participant
     {
         public int Id { get; set; }
-        public string Question1 { get; set; }
-        public string Answer_1 { get; set; }
-        public string Answer_2 { get; set; }
-        public string Answer_3 { get; set; }
-        public string Answer_4 { get; set; }
+        public string Name { get; set; }
+        public string Nickname { get; set; }
+        public int Points { get; set; }
     }
 }

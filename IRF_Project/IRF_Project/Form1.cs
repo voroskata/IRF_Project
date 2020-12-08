@@ -13,7 +13,7 @@ namespace IRF_Project
 {
     public partial class Form1 : Form
     {
-        PlayerEntities1 context = new PlayerEntities1();
+        GameEntities context = new GameEntities();
 
         Random rnd = new Random();
 
@@ -22,27 +22,29 @@ namespace IRF_Project
             InitializeComponent();
             CreateAnswerSheet();
 
-            context.Questions.Load();
+            context.Quizs.Load();
 
-            int kerdes_id = rnd.Next(40)+1;
+            //int kerdes_id = rnd.Next(40)+1;
 
-            string kerdes = ((from k in context.Questions
+            int kerdes_id = 2;
+
+            string kerdes = ((from k in context.Quizs
                               where k.Id == kerdes_id
-                              select k.Question1).SingleOrDefault()).ToString();
+                              select k.Question).SingleOrDefault()).ToString();
 
-            string v1 = ((from k in context.Questions
+            string v1 = ((from k in context.Quizs
                           where k.Id == kerdes_id
                           select k.Answer_1).SingleOrDefault()).ToString();
 
-            string v2 = ((from k in context.Questions
+            string v2 = ((from k in context.Quizs
                           where k.Id == kerdes_id
                           select k.Answer_2).SingleOrDefault()).ToString();
 
-            string v3 = ((from k in context.Questions
+            string v3 = ((from k in context.Quizs
                           where k.Id == kerdes_id
                           select k.Answer_3).SingleOrDefault()).ToString();
 
-            string v4 = ((from k in context.Questions
+            string v4 = ((from k in context.Quizs
                           where k.Id == kerdes_id
                           select k.Answer_4)).SingleOrDefault().ToString();
 

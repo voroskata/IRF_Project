@@ -13,10 +13,10 @@ namespace IRF_Project
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PlayerEntities1 : DbContext
+    public partial class GameEntities : DbContext
     {
-        public PlayerEntities1()
-            : base("name=PlayerEntities1")
+        public GameEntities()
+            : base("name=GameEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace IRF_Project
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Player> Players { get; set; }
-        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Participant> Participants { get; set; }
+        public virtual DbSet<Quiz> Quizs { get; set; }
     }
 }
