@@ -47,7 +47,7 @@ namespace IRF_Project
             points.Text = legjobbPont.ToString();
         }
 
-        private void GetQuestions()
+        public void GetQuestions()
         {
             int kerdes_id = rnd.Next(40) + 1;
 
@@ -71,11 +71,11 @@ namespace IRF_Project
                           where k.Id == kerdes_id
                           select k.Answer_4).SingleOrDefault()).ToString();
 
-            int jovalasz = ((from k in context.Quizs
-                            where k.Id == kerdes_id
-                            select k.Correct).SingleOrDefault());
+            Solution.jovalasz = ((from k in context.Quizs
+                         where k.Id == kerdes_id
+                         select k.Correct).SingleOrDefault());
 
-            KerdesUserControl kuc = new KerdesUserControl(kerdes, v1, v2, v3, v4, jovalasz);
+            KerdesUserControl kuc = new KerdesUserControl(kerdes, v1, v2, v3, v4, Solution.jovalasz);
             panel2.Controls.Add(kuc);
             kuc.Dock = DockStyle.Fill;
         }
