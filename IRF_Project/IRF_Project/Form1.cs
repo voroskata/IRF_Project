@@ -15,11 +15,14 @@ namespace IRF_Project
     {
         GameEntities context = new GameEntities();
 
+        List<int> solutions = new List<int>();
+        List<int> answers = new List<int>();
+
         Random rnd = new Random();
 
         int counter = 0;
         int countdown = 20;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -32,10 +35,15 @@ namespace IRF_Project
             GetQuestions();
 
             GetBestParticipant();
-            
+
             CountDown();
+
+            solutions.Clear();
+            answers.Clear();
         }
 
+
+        //Játékidő visszaszámlálás
         private void Timer1_Tick(object sender, EventArgs e)
         {
             countdown--;
@@ -44,6 +52,7 @@ namespace IRF_Project
             {
                 GetQuestions();
                 Coloring();
+                countdown = 20;
                 CountDown();
             }
 
@@ -58,6 +67,7 @@ namespace IRF_Project
             label3.Text = countdown.ToString();
         }
 
+        // legjobb játékos meghatározása, kiírása a felületre
         private void GetBestParticipant()
         {
             var maxValue = context.Participants.Max(x => x.Points);
@@ -74,11 +84,14 @@ namespace IRF_Project
             points.Text = legjobbPont.ToString();
         }
 
+        //új kérdés
         public void GetQuestions()
         {
+            //var rows = (context.Quizs.SqlQuery("SELECT * FROM dbo.Quizs").ToList()).Count;           
+
             panel2.Controls.Clear();
 
-            int kerdes_id = rnd.Next(40);
+            int kerdes_id = rnd.Next(39);
 
             string kerdes = ((from k in context.Quizs
                               where k.Id == kerdes_id
@@ -104,11 +117,14 @@ namespace IRF_Project
                          where k.Id == kerdes_id
                          select k.Correct).SingleOrDefault());
 
+            solutions.Add(Solution.jovalasz);
+
             KerdesUserControl kuc = new KerdesUserControl(kerdes, v1, v2, v3, v4, Solution.jovalasz);
             panel2.Controls.Add(kuc);
             kuc.Dock = DockStyle.Fill;
         }
 
+        //válaszív elkészítése
         private void CreateAnswerSheet()
         {
             for (int i = 0; i < 10; i++)
@@ -119,43 +135,71 @@ namespace IRF_Project
             }
         }
 
+        //eredmények megjelenítése
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             f2.Show();
         }
 
+        //új kérdés kérése
         private void button2_Click(object sender, EventArgs e)
         {
             GetQuestions();
 
             counter++;
+            countdown = 20;
 
             if (counter == 10)
             {
-                Coloring();
+                timer1.Stop();
+
                 button2.Visible = false;
+
+                foreach (var ans in panel1.Controls.OfType<AnswerSheet>())
+                {
+                    answers.Add(ans.Answer);
+                }
+
+                Coloring();
             }
         }
 
+        //játék vége
         private void button3_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+
+            foreach (var ans in panel1.Controls.OfType<AnswerSheet>())
+            {
+                answers.Add(ans.Answer);
+            }
+
             Coloring();
         }
 
+
+        //válaszok helyességének meghatározása
         private void Coloring()
         {
-            foreach (var ans in panel1.Controls.OfType<AnswerSheet>())
+            panel1.Controls.Clear();
+
+            for (int i = 0; i < 10; i++)
             {
-                if (ans.Answer == Solution.jovalasz)
+                if (answers[i] != solutions[i])
                 {
-                    ans.BackColor = Color.Green;
+                    AnswerSheet answer = new AnswerSheet();
+                    answer.Left = i * answer.Width;
+                    panel1.Controls.Add(answer);
+                    answer.BackColor = Color.Red;
                 }
                 else
                 {
-                    ans.BackColor = Color.Red;
+                    AnswerSheet answer = new AnswerSheet();
+                    answer.Left = i * answer.Width;
+                    panel1.Controls.Add(answer);
+                    answer.BackColor = Color.Green;
                 }
-
             }
         }
     }
