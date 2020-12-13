@@ -17,6 +17,9 @@ namespace IRF_Project
 
         Random rnd = new Random();
 
+        int counter = 0;
+        int countdown = 20;
+
         public Form1()
         {
             InitializeComponent();
@@ -27,8 +30,32 @@ namespace IRF_Project
             context.Participants.Load();
 
             GetQuestions();
-            GetBestParticipant();
 
+            GetBestParticipant();
+            
+            CountDown();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            countdown--;
+
+            if (countdown==0)
+            {
+                GetQuestions();
+                Coloring();
+                CountDown();
+            }
+
+            label3.Text = countdown.ToString();
+        }
+
+        private void CountDown()
+        {
+            timer1.Tick += Timer1_Tick;
+            timer1.Interval = 1000;
+            timer1.Start();
+            label3.Text = countdown.ToString();
         }
 
         private void GetBestParticipant()
@@ -49,7 +76,9 @@ namespace IRF_Project
 
         public void GetQuestions()
         {
-            int kerdes_id = rnd.Next(40) + 1;
+            panel2.Controls.Clear();
+
+            int kerdes_id = rnd.Next(40);
 
             string kerdes = ((from k in context.Quizs
                               where k.Id == kerdes_id
@@ -98,9 +127,36 @@ namespace IRF_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
-
             GetQuestions();
+
+            counter++;
+
+            if (counter == 10)
+            {
+                Coloring();
+                button2.Visible = false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Coloring();
+        }
+
+        private void Coloring()
+        {
+            foreach (var ans in panel1.Controls.OfType<AnswerSheet>())
+            {
+                if (ans.Answer == Solution.jovalasz)
+                {
+                    ans.BackColor = Color.Green;
+                }
+                else
+                {
+                    ans.BackColor = Color.Red;
+                }
+
+            }
         }
     }
 }
