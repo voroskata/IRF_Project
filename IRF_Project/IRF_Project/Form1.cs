@@ -21,7 +21,10 @@ namespace IRF_Project
         Random rnd = new Random();
 
         int counter = 0;
+        public static int pointcounter = 0;
         int countdown = 20;
+
+        Registration reg;
         
         public Form1()
         {
@@ -162,6 +165,9 @@ namespace IRF_Project
                 }
 
                 Coloring();
+
+                GetPoints();
+                label7.Text = pointcounter.ToString();
             }
         }
 
@@ -210,5 +216,20 @@ namespace IRF_Project
                 }
             }
         }
+
+        private void GetPoints()
+        {
+            for (int i = 0; i < counter; i++)
+            {
+                var a = answers[i];
+                var s = solutions[i];
+
+                if (a == s)
+                {
+                    pointcounter++;
+                }
+            }
+        }      
+        
     }
 }
