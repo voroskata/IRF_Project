@@ -136,7 +136,7 @@ namespace IRF_Project
             }
         }
 
-        //eredmények megjelenítése
+        //regisztrált felhasználók megjelenítése
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();

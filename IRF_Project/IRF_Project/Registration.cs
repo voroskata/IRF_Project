@@ -61,12 +61,7 @@ namespace IRF_Project
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
             this.Validate();
-        }
-
-        private void TextBox3_TextChanged(object sender, EventArgs e)
-        {
-            this.Validate();
-        }
+        }        
 
         private bool ValidFNev(string fnév)
         {
