@@ -165,17 +165,22 @@ namespace IRF_Project
             }
         }
 
-        //játék vége
+        //új játék
         private void button3_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
+            answers.Clear();
+            solutions.Clear();
 
-            foreach (var ans in panel1.Controls.OfType<AnswerSheet>())
-            {
-                answers.Add(ans.Answer);
-            }
+            counter = 0;
+            countdown = 20;
 
-            Coloring();
+            GetQuestions();
+            CountDown();
+
+            panel1.Controls.Clear();
+            CreateAnswerSheet();
+
+            button2.Visible = true;
         }
 
 
@@ -184,9 +189,12 @@ namespace IRF_Project
         {
             panel1.Controls.Clear();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < counter; i++)
             {
-                if (answers[i] != solutions[i])
+                var a = answers[i];
+                var s = solutions[i];
+
+                if (a != s)
                 {
                     AnswerSheet answer = new AnswerSheet();
                     answer.Left = i * answer.Width;
