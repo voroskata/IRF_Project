@@ -23,8 +23,6 @@ namespace IRF_Project
         int counter = 0;
         public static int pointcounter = 0;
         int countdown = 20;
-
-        Registration reg;
         
         public Form1()
         {
@@ -217,6 +215,7 @@ namespace IRF_Project
             }
         }
 
+        //Pontok kiírása
         private void GetPoints()
         {
             for (int i = 0; i < counter; i++)
