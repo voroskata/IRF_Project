@@ -10,9 +10,9 @@ namespace IRF_Project
 {
     public class AnswerSheet : Button
     {
-        GameEntities context = new GameEntities();
+        //GameEntities context = new GameEntities();
 
-        int valasz = Solution.jovalasz;
+        //int valasz = Solution.jovalasz;
 
         private int _answer;
         public int Answer {

@@ -66,5 +66,10 @@ namespace IRF_Project
                 }
             }
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Refresh();
+        }
     }
 }

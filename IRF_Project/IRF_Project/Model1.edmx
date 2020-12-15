@@ -40,24 +40,9 @@ warning 6002: The table/view 'C:\USERS\KATA\SOURCE\REPOS\VOROSKATA\IRF_PROJECT\I
           <Property Name="Correct" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GameModelStoreContainer">
-          <EntitySet Name="Participant" EntityType="Self.Participant" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Participant].[Id] AS [Id], 
-    [Participant].[Name] AS [Name], 
-    [Participant].[Nickname] AS [Nickname], 
-    [Participant].[Points] AS [Points]
-    FROM [dbo].[Participant] AS [Participant]</DefiningQuery>
+          <EntitySet Name="Participant" EntityType="Self.Participant" store:Type="Tables" Schema="dbo">            
           </EntitySet>
-          <EntitySet Name="Quiz" EntityType="Self.Quiz" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Quiz].[Id] AS [Id], 
-    [Quiz].[Question] AS [Question], 
-    [Quiz].[Answer_1] AS [Answer_1], 
-    [Quiz].[Answer_2] AS [Answer_2], 
-    [Quiz].[Answer_3] AS [Answer_3], 
-    [Quiz].[Answer_4] AS [Answer_4], 
-    [Quiz].[Correct] AS [Correct]
-    FROM [dbo].[Quiz] AS [Quiz]</DefiningQuery>
+          <EntitySet Name="Quiz" EntityType="Self.Quiz" store:Type="Tables" Schema="dbo">            
           </EntitySet>
         </EntityContainer>
       </Schema>

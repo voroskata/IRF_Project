@@ -97,5 +97,48 @@ namespace IRF_Project
         {
             errorProvider1.SetError(textBox2, "");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Participant rv = new Participant();
+            rv.Name = textBox1.Text;
+            rv.Nickname = textBox2.Text;
+
+            context.Participants.Add(rv);
+
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label1.Visible = true;
+            label2.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            button1.Visible = true;
+            button2.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
