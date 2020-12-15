@@ -20,6 +20,22 @@ namespace IRF_Project
             InitializeComponent();
 
             context.Participants.Load();
+
+            CreateButtons();
+        }
+
+        //gombok elkészítése
+        private void CreateButtons()
+        {
+            RegistrationButtons button5 = new RegistrationButtons();
+            button5.Text = "Játék vendégként";
+            panel1.Controls.Add(button5);
+            button5.Click += Button5_Click;
+
+            RegistrationButtons button6 = new RegistrationButtons();
+            button6.Text = "Regisztráció";
+            panel2.Controls.Add(button6);
+            button6.Click += Button6_Click;
         }
 
         private bool ValidNev(string név)
@@ -115,7 +131,7 @@ namespace IRF_Project
             f1.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             label1.Visible = true;
             label2.Visible = true;
@@ -125,12 +141,12 @@ namespace IRF_Project
             button2.Visible = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button6_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
             f1.Show();
-        }
-
+        }  
+        
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
