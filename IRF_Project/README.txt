@@ -1,13 +1,11 @@
 Projektem során egy kvízjátékot fogok létrehozni.
 
-A játékosoknak a játék előtt névvel és felhasználónévvel kell regisztálniuk. A megadott adatok bekerülnek a Players adatbázisba. A játék eltárolja a játékosok által elért pontokat.
+A játékosoknak a játék előtt névvel és felhasználónévvel kell regisztálniuk, vagy játszhatnak vendégként. A megadott adatok bekerülnek a Participants adatbázisba. 
 Az aktuálisan legtöbb pontot elért játékos felhasználóneve és pontszáma megjelenik a játékmező sarkában.
 
-A kvízkérdéseket a Questions adatbázisban tároltam, ahonnan véletlenszerűen kerülnek kiválasztásra a feladványban szereplő kérdések.
-Egy játék során 10 kérdésre kell válaszolni X idő alatt.
-Minden kérdéshez maximum 4 válaszlehetőség tartozhat.
-A játékosnak egy megoldóíven kell bejelölnie a kérdésekre adott válaszait. 
+A kvízkérdéseket a Quiz adatbázisban tároltam, ahonnan véletlenszerűen, random generátorral kerülnek kiválasztásra a feladványban szereplő kérdések.
+Egy játék során 10 kérdésre kell válaszolni 20 mp alatt.
+Minden kérdéshez 4 válaszlehetőség tartozik.
+A játékosnak egy válaszíven kell bejelölnie a kérdésekre adott válaszait a gombra történő kattintással. 
 
-Az egyes játékosok aktuális pontjait lehetőség lesz csv-be kimenteni. A játékosoknak csak a felhasználónevük és a pontjuk lesz látható. 
-
-
+Az egyes játékosok aktuális pontjait lehetőség van csv-be kimenteni. A játékosok neve, felhasználóneve és a pontjuk lesz látható az exportált fájlban.
